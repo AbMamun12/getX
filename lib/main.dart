@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:getx/counter_controller.dart';
 import 'package:getx/home_screen.dart';
+import 'package:getx/profile_screen.dart';
+import 'package:getx/setting_screen.dart';
 
 void main(){
   runApp(CounterApp());
@@ -13,8 +15,14 @@ class CounterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GetMaterialApp(
-      home: const HomeScreen(),
       initialBinding: ControllerBinder(),
+      initialRoute: '/',
+      routes: {
+        HomeScreen.name:(context)=>const HomeScreen(),
+        ProfileScreen.name:(context)=>const ProfileScreen(),
+        SettingScreen.name:(context)=>const SettingScreen(),
+
+      },
     );
   }
 }
